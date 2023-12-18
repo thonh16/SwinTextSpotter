@@ -1071,31 +1071,21 @@ class Visualizer:
         # color[np.argmax(color)] = max(0.8, np.max(color))
         #luyao#
         color = 'w'
-        # font_size = 7.0
+        font_size = 5.0
         x, y = position
-        font_path = "VNFREE.TTF"
-        prop = mfm.FontProperties(fname=font_path)
+
         self.output.ax.text(
             x,
             y,
             text,
             size=font_size * self.output.scale,
-            # family="sans-serif",
-            family="monospace",
-            # family="serif",
-            #luyao#
+            family="sans-serif",
             bbox={"facecolor": "black", "alpha": 0.0, "pad": 0.0, "edgecolor": "none"},
-            # bbox={"facecolor": "black", "alpha": 0.8, "pad": 0.7, "edgecolor": "none"},
-            # verticalalignment="top",
             verticalalignment="bottom",
             horizontalalignment=horizontal_alignment,
             color=color,
             zorder=10,
-            
             rotation=rotation,
-            fontproperties=prop
-            #luyao
-            # fontweight='light'
         )
         return self.output
 
